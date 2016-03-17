@@ -19,10 +19,33 @@ body{
 	background: rgba(0,0,0,.2);
 	border-radius: 3px;
 	box-shadow: inset 0px 4px rgba(0,0,0,.2);
+	height: 30px;
 }
 .clear{
 	background: #ff9fa8;
-	box-shadow: 0px 4px #ff7c87;
+	/*box-shadow: 0px 4px #ff7c87;*/
 	color: white;
+	height: 30px;
 	width: 50px;
+	margin-bottom: 7px;
+}
+
+.number, .operator{
+	height: 36px;
+	width: 66px;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0px 4px rgba(0,0,0,.2);
+	margin: 0 7px 11px 0;
+	color: #888;
+	/*prevent user from being able to select the text inside the button*/
+	user-select: none;
+}
+
+.operator{
+	background-color: orange;
+}
+
+.operator.equals{
+	background-color: yellow;
 }
