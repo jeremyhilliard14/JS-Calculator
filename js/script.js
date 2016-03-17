@@ -76,7 +76,7 @@ $(document).ready(function(){
 				$('.screen').val(currScreenVal + '.');
 		}
 	}
-})
+});
 
 // function clearScreen(){
 // 	$('.screen').val("");
@@ -102,4 +102,7 @@ function doIt(){
 		}
 	}
 	$('.screen').val(total);
+	if(total == 21){
+		
+	}
 }
