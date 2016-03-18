@@ -4,7 +4,6 @@
 $(document).ready(function(){
 
 	document.onkeyup = keyCheck;
-
 	$('.operator, .number').click(function(){
 		if ($(this).hasClass('equals')){
 			doIt();
@@ -14,6 +13,11 @@ $(document).ready(function(){
 			var currScreenVal = $('.screen').val();
 		$('.screen').val(currScreenVal + $(this).val());
 		}
+	})
+
+
+	$('.clear').click(function(){
+		shake('.clear, .screen', 100, 10, 4);
 	})
 
 	function keyCheck(){
@@ -56,7 +60,7 @@ $(document).ready(function(){
 				break;
 			case 187:
 				// //equal sign
-				// $('.screen').val('=');
+				$('.screen').val(currScreenVal + '+');
 				doIt();
 				break;
 			case 191:
@@ -97,7 +101,7 @@ function doIt(){
 	}catch(e){
 		console.log(e);
 		if(e instanceof SyntaxError){
-			alert("Syntax Error.");
+			// alert("Syntax Error.");
 			return;
 		}else if(e instanceof ReferenceError){
 			alert("Reference Error");
@@ -117,6 +121,16 @@ function doIt(){
     	$('.clear').addClass('roll');
     }
 }
+
+
+function shake(div,interval,distance,times){
+    $('.clear, .screen').css('position','relative');
+    for(var iter=0;iter<(times+1);iter++){
+        $('.clear, .screen').animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+    }//for
+    $('.clear, .screen').animate({ left: 0},interval);
+}//shake
+
 
 // function rotateCalc(){
 // 		$('#calculator').css({transform: 'roatate(720deg)'});
