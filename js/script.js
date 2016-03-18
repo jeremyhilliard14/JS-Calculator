@@ -1,3 +1,6 @@
+// var total = eval($('.screen').val());
+
+
 $(document).ready(function(){
 
 	document.onkeyup = keyCheck;
@@ -94,15 +97,28 @@ function doIt(){
 	}catch(e){
 		console.log(e);
 		if(e instanceof SyntaxError){
-			alert("Try again.");
+			alert("Syntax Error.");
 			return;
 		}else if(e instanceof ReferenceError){
-			alert("Dang");
+			alert("Reference Error");
 			return;
 		}
 	}
 	$('.screen').val(total);
-	if(total == 21){
-		
-	}
+	if(total == 14){
+		$('#smiley').animate({margin: '+=0 0 0 2000px'}, 2000);
+    }else if(total == 3.14){
+    	$('#pie').animate({margin: '+= 0 0 0 3000px'}, 1500);
+    }else if(total == 360){
+    	$('#calculator').addClass('spin');
+    }else if(total >= 1000000){
+    	$('.screen').css({transform: 'scale(2,2)'});
+    }else if(total == 36){
+    	$('.clear').addClass('roll');
+    }
 }
+
+// function rotateCalc(){
+// 		$('#calculator').css({transform: 'roatate(720deg)'});
+// }
+
