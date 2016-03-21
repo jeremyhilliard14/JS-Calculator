@@ -59,7 +59,8 @@ body{
 	margin-left: -1500px;
 }
 .spin{
-	transform: rotate(720deg);
+	transform: rotate(180deg);
+	transition: all 4s;
 }
 
 .big{

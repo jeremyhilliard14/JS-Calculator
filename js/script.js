@@ -11,7 +11,13 @@ $(document).ready(function(){
 			$('.screen').val('');
 		}else{
 			var currScreenVal = $('.screen').val();
-		$('.screen').val(currScreenVal + $(this).val());
+			if($(this).attr('name') == 'multiply'){
+				$('.screen').val(currScreenVal + '*');
+			}else if($(this).attr('name') == 'divide'){
+				$('.screen').val(currScreenVal + '/');
+			}else{
+				$('.screen').val(currScreenVal + $(this).val());
+			}
 		}
 	})
 
@@ -60,7 +66,7 @@ $(document).ready(function(){
 				break;
 			case 187:
 				// //equal sign
-				$('.screen').val(currScreenVal + '+');
+				$('.screen').val(currScreenVal + '=');
 				doIt();
 				break;
 			case 191:
@@ -114,7 +120,7 @@ function doIt(){
     }else if(total == 3.14){
     	$('#pie').animate({margin: '+= 0 0 0 3000px'}, 1500);
     }else if(total == 360){
-    	$('#calculator').addClass('spin');
+    	$('#calculator').addClass('.spin');
     }else if(total >= 1000000){
     	$('.screen').css({transform: 'scale(2,2)'});
     }else if(total == 36){
