@@ -58,7 +58,7 @@ body{
 #pie{
 	margin-left: -1500px;
 }
-.spin{
+#calculator.spin{
 	transform: rotate(180deg);
 	transition: all 4s;
 }
